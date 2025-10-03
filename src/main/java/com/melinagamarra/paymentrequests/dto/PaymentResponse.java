@@ -1,5 +1,6 @@
 package com.melinagamarra.paymentrequests.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,21 +9,48 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PaymentResponse {
-    private Integer id_sp;
-    private String codigo_barra;
-    private String estado_pago;
-    private String medio_pago;
+    @JsonProperty("id_sp")
+    private Integer idSp;
+
+    @JsonProperty("codigo_barra")
+    private String codigoBarra;
+
+    @JsonProperty("estado_pago")
+    private String estadoPago;
+
+    @JsonProperty("medio_pago")
+    private String medioPago;
+
     private String descripcion;
     private Double importe;
-    private Double importe_vencido;
-    private Double importe_pagado;
+
+    @JsonProperty("importe_vencido")
+    private Double importeVencido;
+
+    @JsonProperty("importe_pagado")
+    private Double importePagado;
+
     private Integer cuotas;
-    private String referencia_externa;
-    private String fecha_pago;
-    private String fecha_acreditacion;
-    private String fecha_creacion;
-    private String fecha_actualizacion;
-    private String fecha_vencimiento;
-    private String segunda_fecha_vencimiento;
+
+    @JsonProperty("referencia_externa")
+    private String referenciaExterna;
+
+    @JsonProperty("fecha_pago")
+    private String fechaPago;
+
+    @JsonProperty("fecha_acreditacion")
+    private String fechaAcreditacion;
+
+    @JsonProperty("fecha_creacion")
+    private String fechaCreacion;
+
+    @JsonProperty("fecha_actualizacion")
+    private String fechaActualizacion;
+
+    @JsonProperty("fecha_vencimiento")
+    private String fechaVencimiento;
+
+    @JsonProperty("segunda_fecha_vencimiento")
+    private String segundaFechaVencimiento;
 
 }
