@@ -1,15 +1,19 @@
 package com.melinagamarra.paymentrequests.service;
 
-import com.melinagamarra.paymentrequests.PaymentrequestsApplication;
+
+import com.melinagamarra.paymentrequests.dto.PaymentCreateResponse;
+import com.melinagamarra.paymentrequests.dto.PaymentPageResponse;
+import com.melinagamarra.paymentrequests.dto.PaymentRequest;
 import com.melinagamarra.paymentrequests.dto.PaymentResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
 @Service
 public class WebClientService {
 
@@ -31,11 +35,26 @@ public class WebClientService {
                 .bodyToFlux(PaymentResponse.class);
     }
 
-   public Mono<PaymentResponse> getPaymentById( Integer id) {
+    public Mono<PaymentPageResponse> getPaymentById(int pageNumber, int pageSize, Integer id) {
         return webClient.get()
-                .uri("/api/solicitud_pago/v1/page/solicitud_pago/{id}",id)
+                .uri(uriBuilder -> uriBuilder
+                        .path("/api/solicitud_pago/v1/page/solicitud_pago")
+                        .queryParam("pageNumber", pageNumber)
+                        .queryParam("pageSize", pageSize)
+                        .queryParam("id", id)
+                        .build())
                 .retrieve()
-                .bodyToMono(PaymentResponse.class);
+                .bodyToMono(PaymentPageResponse.class);
+    }
+
+
+   public Mono<PaymentCreateResponse> createPayment(PaymentRequest request) {
+        return webClient.post()
+                .uri("/api/solicitud_pago/v1/checkout/solicitud_pago")
+                .bodyValue(request)
+                .retrieve()
+                .bodyToMono(PaymentCreateResponse.class);
     }
 
 }
+
