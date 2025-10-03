@@ -5,11 +5,13 @@ import com.melinagamarra.paymentrequests.dto.PaymentCreateResponse;
 import com.melinagamarra.paymentrequests.dto.PaymentPageResponse;
 import com.melinagamarra.paymentrequests.dto.PaymentRequest;
 import com.melinagamarra.paymentrequests.dto.PaymentResponse;
+import com.melinagamarra.paymentrequests.mapper.PaymentMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,16 +20,18 @@ import java.util.Map;
 public class WebClientService {
 
     private final WebClient webClient;
+    private final PaymentMapper paymentMapper;
 
 
-    public WebClientService(WebClient helipagosWebClient) {
+    public WebClientService(WebClient helipagosWebClient, PaymentMapper paymentMapper) {
         this.webClient = helipagosWebClient;
+        this.paymentMapper = paymentMapper;
     }
 
-    public Flux<PaymentResponse> getPayments(int page, int limit) {
+    public Flux<PaymentResponse> getPayments(int pageNumber, int pageSize) {
         Map<String, Object> body = new HashMap<>();
-        body.put("page", page);
-        body.put("limit", Math.min(limit, 1000));
+        body.put("pageNumber", pageNumber);
+        body.put("PageSize", pageSize);
         return webClient.post()
                 .uri("/api/solicitud_pago/v1/get_solicitud_pago")
                 .bodyValue(body)
@@ -35,20 +39,21 @@ public class WebClientService {
                 .bodyToFlux(PaymentResponse.class);
     }
 
-    public Mono<PaymentPageResponse> getPaymentById(int pageNumber, int pageSize, Integer id) {
+    public Mono<PaymentResponse> getPaymentById(Integer id) {
+
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .path("/api/solicitud_pago/v1/page/solicitud_pago")
-                        .queryParam("pageNumber", pageNumber)
-                        .queryParam("pageSize", pageSize)
                         .queryParam("id", id)
                         .build())
                 .retrieve()
-                .bodyToMono(PaymentPageResponse.class);
+                .bodyToMono(PaymentPageResponse.class)
+                .map(paymentMapper::toPaymentResponse);
+
     }
 
 
-   public Mono<PaymentCreateResponse> createPayment(PaymentRequest request) {
+    public Mono<PaymentCreateResponse> createPayment(PaymentRequest request) {
         return webClient.post()
                 .uri("/api/solicitud_pago/v1/checkout/solicitud_pago")
                 .bodyValue(request)
