@@ -79,26 +79,33 @@ paymentrequests/
 ├── src/
 │   ├── main/
 │   │   ├── java/com/melinagamarra/paymentrequests/
+            ├── config/
+│   │   │   │   └── WebClientConfig.java      
 │   │   │   ├── controller/
-│   │   │   │   └── WebClientController.java    
-│   │   │   ├── service/
-│   │   │   │   └── WebClientService.java       
+│   │   │   │   └── WebClientController.java  
 │   │   │   ├── dto/
-│   │   │   │   ├── PaymentRequest.java          
-│   │   │   │   ├── PaymentResponse.java         
-│   │   │   │   ├── PaymentPageResponse.java     
-│   │   │   │   └── PaymentCreateResponse.java   
+│   │   │   │   ├── PaymentRequest.java       
+│   │   │   │   ├── PaymentResponse.java      
+│   │   │   │   ├── PaymentPageResponse.java  
+│   │   │   │   └── PaymentCreateResponse.java
+│   │   │   ├── exception/
+│   │   │   │   ├── ErrorResponse.java       
+│   │   │   │   └── GlobalExceptionHandler.java 
+│   │   │   ├── filter/
+│   │   │   │   └── LoggingFilter.java        
 │   │   │   ├── mapper/
-│   │   │   │   └── PaymentMapper.java          
-│   │   │   └── PaymentrequestsApplication.java  
+│   │   │   │   └── PaymentMapper.java        
+│   │   │   ├── service/
+│   │   │   │   └── WebClientService.java     
+│   │   │   └── PaymentrequestsApplication.java 
 │   │   └── resources/
-│   │       ├── application.yml                  
-│   │       ├── application-dev.yml              
-│   │       └── application-test.yml             
+│   │       ├── application.yml               
+│   │       ├── application-dev.yml           
+│   │       └── application-test.yml                     
 │   └── test/
 │       └── java/com/melinagamarra/paymentrequests/
 │           ├── service/
-│           │   └── WebClientServiceTest.java   
+│              └── WebClientServiceTest.java   
 ├── pom.xml                                     
                                    
 
