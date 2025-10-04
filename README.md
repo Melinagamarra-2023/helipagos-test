@@ -28,7 +28,6 @@ El cliente `WebClient` utiliza variables de entorno para conectarse a la API de 
 
 Ejemplo en `application.yml`:
 
-```yaml
 helipagos:
   base-url: ${HELIPAGOS_BASE_URL}
   api-token: ${HELIPAGOS_API_TOKEN}
