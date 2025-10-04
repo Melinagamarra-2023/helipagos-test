@@ -49,7 +49,7 @@ Se implementó la clase PaymentMapper, cuya responsabilidad es transformar un Pa
 Dar más estructura y claridad a la respuesta que maneja la aplicación.
 
 Estrutura de carpetas
-
+```yaml
 paymentrequests/
 ├── src/
 │   ├── main/
