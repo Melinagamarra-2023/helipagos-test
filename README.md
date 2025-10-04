@@ -48,35 +48,35 @@ Mapper para estructurar la respuesta
 Se implementó la clase PaymentMapper, cuya responsabilidad es transformar un PaymentPageResponse (formato devuelto por la API externa, que contiene un content con la lista de pagos) en una lista de PaymentResponse más simple y usable internamente.
 Dar más estructura y claridad a la respuesta que maneja la aplicación.
 
-
-##Estructura de carpetas
+## 📂 Estructura de carpetas
 
 paymentrequests/
 ├── src/
-│   ├── main/
-│   │   ├── java/com/melinagamarra/paymentrequests/
-│   │   │   ├── controller/
-│   │   │   │   └── WebClientController.java     # Exposición de endpoints REST
-│   │   │   ├── service/
-│   │   │   │   └── WebClientService.java        # Lógica de consumo de la API Helipagos
-│   │   │   ├── dto/
-│   │   │   │   ├── PaymentRequest.java          # Request interno
-│   │   │   │   ├── PaymentResponse.java         # Response interno
-│   │   │   │   ├── PaymentPageResponse.java     # Response externo con content
-│   │   │   │   └── PaymentCreateResponse.java   # Response al crear pago
-│   │   │   ├── mapper/
-│   │   │   │   └── PaymentMapper.java           # Conversión de respuestas externas a internas
-│   │   │   └── PaymentrequestsApplication.java  # Clase principal Spring Boot
-│   │   └── resources/
-│   │       ├── application.yml                  # Configuración general
-│   │       ├── application-dev.yml              # Configuración para desarrollo
-│   │       └── application-test.yml             # Configuración para tests
-│   └── test/
-│       └── java/com/melinagamarra/paymentrequests/
-│           ├── service/
-│               └── WebClientServiceTest.java    # Tests unitarios con MockWebServer
-│           
-│                
-├── pom.xml                                      
-└── README.md                                    
+│ ├── main/
+│ │ ├── java/com/melinagamarra/paymentrequests/
+│ │ │ ├── controller/
+│ │ │ │ └── WebClientController.java # Exposición de endpoints REST
+│ │ │ ├── service/
+│ │ │ │ └── WebClientService.java # Lógica de consumo de la API Helipagos
+│ │ │ ├── dto/
+│ │ │ │ ├── PaymentRequest.java # Request interno
+│ │ │ │ ├── PaymentResponse.java # Response interno
+│ │ │ │ ├── PaymentPageResponse.java # Response externo con content
+│ │ │ │ └── PaymentCreateResponse.java # Response al crear pago
+│ │ │ ├── mapper/
+│ │ │ │ └── PaymentMapper.java # Conversión de respuestas externas a internas
+│ │ │ └── PaymentrequestsApplication.java # Clase principal Spring Boot
+│ │ └── resources/
+│ │ ├── application.yml # Configuración general
+│ │ ├── application-dev.yml # Configuración para desarrollo
+│ │ └── application-test.yml # Configuración para tests
+│ └── test/
+│ └── java/com/melinagamarra/paymentrequests/
+│ ├── service/
+│ │ └── WebClientServiceTest.java # Tests unitarios con MockWebServer
+│
+├── pom.xml # Configuración de dependencias Maven
+└── README.md # Documentación del proyecto
+
+                              
                 
