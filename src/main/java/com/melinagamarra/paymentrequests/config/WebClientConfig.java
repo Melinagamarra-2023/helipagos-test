@@ -15,7 +15,7 @@ public class WebClientConfig {
     private String apiToken;
 
     @Bean
-    public WebClient helipagosWebClient ( WebClient.Builder builder){
+    public WebClient helipagosWebClient(WebClient.Builder builder) {
         return builder
                 .baseUrl(apiUrl)
                 .defaultHeader(HttpHeaders.AUTHORIZATION, "Bearer " + apiToken)
