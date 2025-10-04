@@ -39,7 +39,7 @@ Ejecutar:
 
 Ejecutar:
 ./mvnw clean test
-Esto dispara los tests unitarios ubicados en src/test/java/com/melinagamarra/paymentrequests/service/WebClientServiceTest.java.
+Esto dispara los tests unitarios ubicados en src/test/java/com/melinagamarra/paymentrequests/service/WebClientServiceTest.java
 
 🤔 Decisiones técnicas
 
