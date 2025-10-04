@@ -1,4 +1,4 @@
-# Payment Requests – Prueba Técnica
+# HeliPagos – Prueba Técnica
 
 Proyecto **Spring Boot** para consumir la API de **Helipagos** utilizando `WebClient`.  
 Se incluyen **tests unitarios** con `MockWebServer` para validar la integración con la API de manera desacoplada.
