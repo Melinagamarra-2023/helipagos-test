@@ -42,13 +42,14 @@ Ejecutar:
 Esto dispara los tests unitarios ubicados en src/test/java/com/melinagamarra/paymentrequests/service/WebClientServiceTest.java.
 
 🤔 Decisiones técnicas
+
 Variables de entorno para configuración
 Se usan variables de entorno para la URL base y el Bearer Token, evitando exponer credenciales en el código y permitiendo portabilidad entre entornos.
 Mapper para estructurar la respuesta
 Se implementó la clase PaymentMapper, cuya responsabilidad es transformar un PaymentPageResponse (formato devuelto por la API externa, que contiene un content con la lista de pagos) en una lista de PaymentResponse más simple y usable internamente.
 Dar más estructura y claridad a la respuesta que maneja la aplicación.
 
-Estrutura de carpetas
+Estructura de carpetas
 ```yaml
 paymentrequests/
 ├── src/
