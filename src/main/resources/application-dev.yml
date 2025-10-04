@@ -1,0 +1,4 @@
+helipagos:
+  api:
+    url: ${HELIPAGOS_API_URL}
+    token: ${HELIPAGOS_API_TOKEN}
