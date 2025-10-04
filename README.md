@@ -25,6 +25,7 @@ El cliente `WebClient` utiliza variables de entorno para conectarse a la API de 
 
 - `HELIPAGOS_BASE_URL`: https://sandbox.helipagos.com  
 - `HELIPAGOS_API_TOKEN`: El token será provisto por la administración de Helipagos
+- `SPRING_PROFILES_ACTIVE` : dev o test
 
 🤔 Decisiones técnicas
 
