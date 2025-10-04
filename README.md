@@ -1,3 +1,5 @@
+
+```yaml
 # HeliPagos – Prueba Técnica
 
 Proyecto **Spring Boot** para consumir la API de **Helipagos** utilizando `WebClient`.  
@@ -27,6 +29,29 @@ El cliente `WebClient` utiliza variables de entorno para conectarse a la API de 
 - `HELIPAGOS_API_TOKEN`: El token será provisto por la administración de Helipagos
 - `SPRING_PROFILES_ACTIVE` : dev o test
 
+### ▶️ Cómo levantar el servidor
+
+Clonar el repositorio
+Definir las variables de entorno
+
+export SPRING_PROFILES_ACTIVE=dev   # o test
+export HELIPAGOS_API_URL=https://sandbox.helipagos.com
+export HELIPAGOS_API_TOKEN=El_token_será_provisto_por_la_administración_de_Helipagos
+
+Ejecutar el servidor
+
+./mvnw spring-boot:run
+
+🧪 Cómo correr los tests
+
+Ejecutar:
+
+./mvnw clean test
+
+Esto dispara los tests unitarios ubicados en:
+
+src/test/java/com/melinagamarra/paymentrequests/service/WebClientServiceTest.java
+
 🤔 Decisiones técnicas
 
 Variables de entorno para configuración
@@ -35,7 +60,7 @@ Mapper para estructurar la respuesta
 Se implementó la clase PaymentMapper, cuya responsabilidad es transformar un PaymentPageResponse (formato devuelto por la API externa, que contiene un content con la lista de pagos) en una lista de PaymentResponse más simple y usable internamente.
 Dar más estructura y claridad a la respuesta que maneja la aplicación.
 
-```yaml
+
 🚀 Uso con Postman
 
 GET {{base_url}}/payments?page=0&size=10
