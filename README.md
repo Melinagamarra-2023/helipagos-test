@@ -35,12 +35,6 @@ Definir variables de entorno
 Ejecutar:
 ./mvnw spring-boot:run
 
-🧪 Cómo correr los tests
-
-Ejecutar:
-./mvnw clean test
-Esto dispara los tests unitarios ubicados en src/test/java/com/melinagamarra/paymentrequests/service/WebClientServiceTest.java
-
 🤔 Decisiones técnicas
 
 Variables de entorno para configuración
