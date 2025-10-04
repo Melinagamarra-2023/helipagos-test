@@ -55,27 +55,27 @@ paymentrequests/
 │   ├── main/
 │   │   ├── java/com/melinagamarra/paymentrequests/
 │   │   │   ├── controller/
-│   │   │   │   └── WebClientController.java     # Exposición de endpoints REST
+│   │   │   │   └── WebClientController.java    
 │   │   │   ├── service/
-│   │   │   │   └── WebClientService.java        # Lógica de consumo de la API Helipagos
+│   │   │   │   └── WebClientService.java       
 │   │   │   ├── dto/
-│   │   │   │   ├── PaymentRequest.java          # Request interno
-│   │   │   │   ├── PaymentResponse.java         # Response interno
-│   │   │   │   ├── PaymentPageResponse.java     # Response externo con content
-│   │   │   │   └── PaymentCreateResponse.java   # Response al crear pago
+│   │   │   │   ├── PaymentRequest.java          
+│   │   │   │   ├── PaymentResponse.java         
+│   │   │   │   ├── PaymentPageResponse.java     
+│   │   │   │   └── PaymentCreateResponse.java   
 │   │   │   ├── mapper/
-│   │   │   │   └── PaymentMapper.java           # Conversión de respuestas externas a internas
-│   │   │   └── PaymentrequestsApplication.java  # Clase principal Spring Boot
+│   │   │   │   └── PaymentMapper.java          
+│   │   │   └── PaymentrequestsApplication.java  
 │   │   └── resources/
-│   │       ├── application.yml                  # Configuración general
-│   │       ├── application-dev.yml              # Configuración para desarrollo
-│   │       └── application-test.yml             # Configuración para tests
+│   │       ├── application.yml                  
+│   │       ├── application-dev.yml              
+│   │       └── application-test.yml             
 │   └── test/
 │       └── java/com/melinagamarra/paymentrequests/
 │           ├── service/
-│           │   └── WebClientServiceTest.java    # Tests unitarios con MockWebServer
-├── pom.xml                                      # Configuración de dependencias Maven
-└── README.md                                    # Documentación del proyecto
+│           │   └── WebClientServiceTest.java   
+├── pom.xml                                     
+                                   
 
 
                               
