@@ -26,21 +26,6 @@ El cliente `WebClient` utiliza variables de entorno para conectarse a la API de 
 - `HELIPAGOS_BASE_URL`: https://sandbox.helipagos.com  
 - `HELIPAGOS_API_TOKEN`: El token será provisto por la administración de Helipagos
 
-
-
-## 🚀 Cómo correr el proyecto
-
-Este proyecto requiere definir variables de entorno para configurar la conexión con la API de Helipagos.
-
-Ejecutar en consola:
-
-```bash
-export SPRING_PROFILES_ACTIVE=dev
-export HELIPAGOS_API_URL=https://sandbox.helipagos.com
-export HELIPAGOS_API_TOKEN= El token será provisto por la administración de Helipagos \
-
-
-
 🤔 Decisiones técnicas
 
 Variables de entorno para configuración
