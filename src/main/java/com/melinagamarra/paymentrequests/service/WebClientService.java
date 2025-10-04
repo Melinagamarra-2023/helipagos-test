@@ -29,14 +29,13 @@ public class WebClientService {
     }
 
     public Flux<PaymentResponse> getPayments(int pageNumber, int pageSize) {
-        Map<String, Object> body = new HashMap<>();
-        body.put("pageNumber", pageNumber);
-        body.put("PageSize", pageSize);
+
         return webClient.post()
                 .uri("/api/solicitud_pago/v1/get_solicitud_pago")
-                .bodyValue(body)
                 .retrieve()
-                .bodyToFlux(PaymentResponse.class);
+                .bodyToFlux(PaymentResponse.class)
+                .skip((long) pageNumber * pageSize)
+                .take(pageSize);
     }
 
     public Mono<PaymentResponse> getPaymentById(Integer id) {
