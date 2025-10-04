@@ -38,13 +38,6 @@ Ejecutar en consola:
 export SPRING_PROFILES_ACTIVE=dev
 export HELIPAGOS_API_URL=https://sandbox.helipagos.com
 export HELIPAGOS_API_TOKEN= El token será provisto por la administración de Helipagos \
-mvn spring-boot:run
-
- Cómo correr los tests
-
-Ejecutar:
-./mvnw clean test
-Esto dispara los tests unitarios ubicados en src/test/java/com/melinagamarra/paymentrequests/service/WebClientServiceTest.java.
 
 
 
