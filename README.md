@@ -25,7 +25,10 @@ El cliente `WebClient` utiliza variables de entorno para conectarse a la API de 
 
 - `HELIPAGOS_BASE_URL`: https://sandbox.helipagos.com  
 - `HELIPAGOS_API_TOKEN`: El token será provisto por la administración de Helipagos
-- ```yaml
+
+Ejemplo en `application.yml`:
+
+```yaml
 helipagos:
   base-url: ${HELIPAGOS_BASE_URL}
   api-token: ${HELIPAGOS_API_TOKEN}
@@ -81,7 +84,4 @@ paymentrequests/
 │                
 ├── pom.xml                                      
 └── README.md                                    
-                               
-
-
-
+                
