@@ -28,12 +28,25 @@ El cliente `WebClient` utiliza variables de entorno para conectarse a la API de 
 
 
 
-▶️ Cómo levantar el servidor
+## 🚀 Cómo correr el proyecto
 
-Clonar el repositorio
-Definir variables de entorno
+Este proyecto requiere definir variables de entorno para configurar la conexión con la API de Helipagos.
+
+Ejecutar en consola:
+
+```bash
+export SPRING_PROFILES_ACTIVE=dev
+export HELIPAGOS_API_URL=https://sandbox.helipagos.com
+export HELIPAGOS_API_TOKEN= El token será provisto por la administración de Helipagos \
+mvn spring-boot:run
+
+ Cómo correr los tests
+
 Ejecutar:
-./mvnw spring-boot:run
+./mvnw clean test
+Esto dispara los tests unitarios ubicados en src/test/java/com/melinagamarra/paymentrequests/service/WebClientServiceTest.java.
+
+
 
 🤔 Decisiones técnicas
 
